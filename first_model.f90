@@ -3105,14 +3105,19 @@ subroutine select_and_reproduce()
 
 
 contains
-
+! This subroutine also includes a nested subroutine called
+! recombine_genes(), where recombination occurs.  
 ! Performs gene recombination for the offspring generation by exchanging 
-! the gene_fear and gene_hunger values between pairs of birds.
+! the gene_fear and gene_hunger values between pairs of birds,
+! with an intermediate «holder» of the genes in order to avoid
+! accidentally switching genes back to the same bird that originally
+! carried them.
 ! The recombination is performed for birds with indices from 101 
-! to the end of the population size (POP_SIZE).
+! to the end of the population size (N).
 ! The recombination is done by associating each bird with the bird 
-! that is 100 indices behind it, and then exchanging the gene_fear 
+! that is 50-150 indices behind it, and then exchanging the gene_fear 
 ! and gene_hunger values between the pair.
+
 subroutine recombine_genes() 
   integer :: current_bird_index, partner_bird_index_fear, partner_bird_index_hunger
   integer :: gene_swap_distance_fear, gene_swap_distance_hunger, total_alive_birds
