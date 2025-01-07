@@ -4,7 +4,7 @@ This is the code for Hanif Kawousi's msc thesis model, depicting the evolution o
 
 
 ! These are the main code files for Hanif Kawousi's Msc-project.
-! To run it, make sure to have two_gene_model.f90 (the model code),
+! To run it, make sure to have first_model.f90 (the model code),
 ! the Makefile and main.f90 in the same directory.
 ! Then run "make" in the terminal for running in evolutionary mode, or
 ! run "make gen_(your evolutionary generation number) to run in ecological mode.
